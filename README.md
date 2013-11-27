@@ -1,4 +1,4 @@
-# generator-threejs [![Build Status](https://secure.travis-ci.org/timmywil/generator-threejs.png?branch=master)](https://travis-ci.org/timmywil/generator-threejs)
+# generator-threejs [![Build Status](https://secure.travis-ci.org/timmywil/generator-threejs.png?branch=master)](https://travis-ci.org/timmywil/generator-threejs) (not yet production ready)
 
 A generator for [Yeoman](http://yeoman.io) that builds basic scaffolding based on common best practices for a project using [three.js](https://github.com/mrdoob/three.js).
 
