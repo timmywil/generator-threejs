@@ -2,7 +2,7 @@
 
 A generator for [Yeoman](http://yeoman.io) that builds basic scaffolding based on common best practices for a project using [three.js](https://github.com/mrdoob/three.js).
 
-The generated project includes a local server for *live reloading* and *linting* as you develop (see the **"Development Server"** section below for how to run the server).
+The generated project includes a local server for *live reloading* and *linting* as you develop (see the [Development Server](https://github.com/timmywil/generator-threejs#development-server) section below for how to run the server).
 
 The starting javascript is exactly the same as the usage guide in the [three.js README](https://github.com/mrdoob/three.js/blob/master/README.md).
 
