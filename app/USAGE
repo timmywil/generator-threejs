@@ -1,0 +1,19 @@
+Description:
+    Produces basic scaffolding for a three.js project
+
+Options:
+    RequireJS: Include RequireJS for AMD
+
+Example:
+    yo threejs
+
+    This will create:
+        Gruntfile.js: Configuration for the task runner.
+        bower.json: Front-end packages installed by bower.
+        package.json: Development packages installed by npm.
+
+        app/: Your application files.
+        test/: Unit tests for your application.
+
+        Make sure all node dependencies are installed and you have installed the grunt-cli (npm install -g grunt-cli).
+        Run grunt serve.

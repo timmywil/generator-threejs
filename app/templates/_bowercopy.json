@@ -1,0 +1,12 @@
+{
+  "libs": {
+    "options": {
+      "destPrefix": "app/js/vendor"
+    },
+    "files": {<% if (requirejs) { %>
+      "three.js": "threejs/build/three.js",
+      "require.js": "requirejs/require.js"<% } else { %>
+      "three.min.js": "threejs/build/three.min.js"<% } %>
+    }
+  }
+}

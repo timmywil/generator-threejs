@@ -1,0 +1,9 @@
+{
+  "name": "temp",
+  "version": "0.0.0",
+  "dependencies": {
+    "threejs": ""<% if (requirejs) { %>,
+    "requirejs": "~2.1.9"<% } %>
+  }
+}
+

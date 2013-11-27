@@ -1,0 +1,22 @@
+{
+    "browser": true,
+    "esnext": true,
+    "jquery": true,
+    "node": true,
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "newcap": true,
+    "noarg": true,
+    "quotmark": "single",
+    "undef": true,
+    "unused": true,
+    "smarttabs": true,
+    "trailing": true,
+    "globals": {
+        "requestAnimationFrame": false,
+        "THREE": true
+    }
+}

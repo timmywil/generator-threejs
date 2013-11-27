@@ -1,0 +1,52 @@
+{
+  "name": "generator-threejs",
+  "version": "0.0.0",
+  "description": "A Yeoman generator for three.js projects",
+  "keywords": [
+    "yeoman-generator",
+    "threejs",
+    "three.js"
+  ],
+  "homepage": "https://github.com/timmywil/generator-threejs",
+  "bugs": "https://github.com/timmywil/generator-threejs/issues",
+  "author": {
+    "name": "Timmy Willison",
+    "email": "",
+    "url": "https://github.com/timmywil"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/timmywil/generator-threejs.git"
+  },
+  "scripts": {
+    "test": "grunt simplemocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.14.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-jsonlint": "~1.0.4",
+    "grunt-newer": "~0.6.0",
+    "grunt-simple-mocha": "~0.4.0",
+    "jshint-stylish": "~0.1.4",
+    "load-grunt-tasks": "~0.2.0",
+    "mocha": "~1.14.0",
+    "time-grunt": "~0.2.3"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
