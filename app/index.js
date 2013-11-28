@@ -3,15 +3,16 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 
-function ThreejsGenerator(args, options, config) {
+function ThreejsGenerator(args, options) {
 	yeoman.generators.Base.apply(this, arguments);
-
-	console.log(config);
 
 	this.on('end', function () {
 		this.installDependencies({
 			bower: false,
-			skipInstall: options['skip-install']
+			skipInstall: options['skip-install'],
+			callback: function() {
+				this.log.ok('Run `grunt serve` to start the server.');
+			}.bind(this)
 		});
 	});
 
