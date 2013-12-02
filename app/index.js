@@ -42,7 +42,7 @@ ThreejsGenerator.prototype.askFor = function askFor() {
 };
 
 ThreejsGenerator.prototype.gruntfile = function gruntfile() {
-  this.copy('Gruntfile.js');
+	this.copy('Gruntfile.js');
 };
 
 ThreejsGenerator.prototype.packageJSON = function packageJSON() {
