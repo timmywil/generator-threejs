@@ -1,4 +1,4 @@
-# generator-threejs [![Build Status](https://secure.travis-ci.org/timmywil/generator-threejs.png?branch=master)](https://travis-ci.org/timmywil/generator-threejs) (not yet production ready)
+# generator-threejs [![Build Status](https://secure.travis-ci.org/timmywil/generator-threejs.png?branch=master)](https://travis-ci.org/timmywil/generator-threejs)
 
 A generator for [Yeoman](http://yeoman.io) that builds basic scaffolding based on common best practices for a project using [three.js](https://github.com/mrdoob/three.js).
 
@@ -58,6 +58,10 @@ The scaffolding includes a local server using [Grunt](http://gruntjs.com). To st
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+
+## Release History
+
+- **0.1.0** *12/2/2013*  Initial release
 
 ## License
 

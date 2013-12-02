@@ -1,6 +1,6 @@
 {
   "name": "generator-threejs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Yeoman generator for three.js projects",
   "keywords": [
     "yeoman-generator",
