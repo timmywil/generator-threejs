@@ -41,12 +41,8 @@ module.exports = function(grunt) {
             all: [ base + '/js/*.js' ]
         },
         jsonlint: {
-            pkg: {
-                src: 'package.json'
-            },
-            bower: {
-                src: '{bower,bowercopy}.json'
-            }
+            pkg: [ 'package.json' ],
+            bower: [ '{bower,bowercopy}.json' ]
         },
         watch: {
             // Watch javascript files for linting
