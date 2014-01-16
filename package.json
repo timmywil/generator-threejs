@@ -23,19 +23,19 @@
     "test": "grunt simplemocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0"
+    "yeoman-generator": "~0.16.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-jsonlint": "~1.0.4",
-    "grunt-newer": "~0.6.0",
+    "grunt-newer": "~0.6.1",
     "grunt-simple-mocha": "~0.4.0",
-    "jshint-stylish": "~0.1.4",
-    "load-grunt-tasks": "~0.2.0",
-    "mocha": "~1.14.0",
-    "time-grunt": "~0.2.3"
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.2.1",
+    "mocha": "~1.17.0",
+    "time-grunt": "~0.2.8"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
