@@ -61,6 +61,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 ## Release History
 
+- **0.2.0** *1/16/2014*  Add .gitignore to project. Update grunt-bowercopy.
 - **0.1.0** *12/2/2013*  Initial release
 
 ## License
