@@ -23,6 +23,7 @@ describe('threejs generator', function () {
 			// add files you expect to exist here.
 			'.jshintrc',
 			'.editorconfig',
+			'.gitignore',
 			['bower.json', (/"name": "temp"/)],
 			['package.json', (/"name": "temp"/)],
 			['bowercopy.json', (/three\.js/)],

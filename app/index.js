@@ -55,9 +55,10 @@ ThreejsGenerator.prototype.bower = function bower() {
 	this.copy('_bowercopy.json', 'bowercopy.json');
 };
 
-ThreejsGenerator.prototype.editorconfig = function editorconfig() {
+ThreejsGenerator.prototype.dotfiles = function dotfiles() {
 	this.copy('editorconfig', '.editorconfig');
 	this.copy('jshintrc', '.jshintrc');
+	this.copy('gitignore', '.gitignore');
 };
 
 ThreejsGenerator.prototype.app = function app() {
