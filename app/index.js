@@ -16,6 +16,13 @@ module.exports = yeoman.generators.Base.extend({
 
 		this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 	},
+	/**
+	 * Generate .yo-rc file
+	 * http://yeoman.github.io/generator/Storage.html
+	 */
+	config: function() {
+		this.config.set('coffeescript', false);
+	},
 	askFor: function() {
 		var done = this.async();
 

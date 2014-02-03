@@ -1,8 +1,10 @@
 /*global describe, beforeEach, it*/
 'use strict';
 
-var path    = require('path');
-var helpers = require('yeoman-generator').test;
+var path = require('path');
+var yeoman = require('yeoman-generator');
+var helpers = yeoman.test;
+var assert = yeoman.assert;
 
 describe('threejs generator', function () {
 	beforeEach(function (done) {
@@ -18,27 +20,37 @@ describe('threejs generator', function () {
 		}.bind(this));
 	});
 
+	/**
+	 * Mock a run through the generator
+	 * @param {ThreeJSGenerator} app
+	 * @param {Object} options Options to pass to the prompt
+	 * @param {Function} complete
+	 */
+	function run(app, options, complete) {
+		helpers.mockPrompt(app, options);
+		app.options['skip-install'] = true;
+		app.run({}, complete);
+	}
+
 	it('creates expected files', function (done) {
 		var expected = [
 			// add files you expect to exist here.
 			'.jshintrc',
 			'.editorconfig',
 			'.gitignore',
-			['bower.json', (/"name": "temp"/)],
-			['package.json', (/"name": "temp"/)],
-			['bowercopy.json', (/three\.js/)],
-			['Gruntfile.js', (/watch:/)],
 			'app/index.html',
 			'app/js/main.js',
 			'app/css/main.css'
 		];
 
-		helpers.mockPrompt(this.app, {
+		run(this.app, {
 			'requirejs': true
-		});
-		this.app.options['skip-install'] = true;
-		this.app.run({}, function () {
-			helpers.assertFiles(expected);
+		}, function() {
+			assert.file(expected);
+			assert.file('bower.json', (/"name": "temp"/));
+			assert.file('package.json', (/"name": "temp"/));
+			assert.file('Gruntfile.js', (/watch:/));
+			assert.file('bowercopy.json', (/three\.js/));
 			done();
 		});
 	});
@@ -48,21 +60,28 @@ describe('threejs generator', function () {
 			// add files you expect to exist here.
 			'.jshintrc',
 			'.editorconfig',
-			['bower.json', (/"name": "temp"/)],
-			['package.json', (/"name": "temp"/)],
-			['bowercopy.json', (/three\.min\.js/)],
-			['Gruntfile.js', (/watch:/)],
 			'app/index.html',
 			'app/js/main.js',
 			'app/css/main.css'
 		];
 
-		helpers.mockPrompt(this.app, {
+		run(this.app, {
 			'requirejs': false
+		}, function() {
+			assert.file(expected);
+			assert.file('bower.json', (/"name": "temp"/));
+			assert.file('package.json', (/"name": "temp"/));
+			assert.file('Gruntfile.js', (/watch:/));
+			assert.file('bowercopy.json', (/three\.min\.js/));
+			done();
 		});
-		this.app.options['skip-install'] = true;
-		this.app.run({}, function () {
-			helpers.assertFiles(expected);
+	});
+
+	it('should generate a .yo-rc.json', function(done) {
+		run(this.app, {
+			'requirejs': true
+		}, function() {
+			assert.file(['.yo-rc.json']);
 			done();
 		});
 	});
