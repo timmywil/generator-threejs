@@ -65,5 +65,5 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['newer:jsonlint', 'newer:jshint', 'simplemocha', 'watch']);
+	grunt.registerTask('default', ['newer:jsonlint', 'newer:jshint', 'simplemocha']);
 };
