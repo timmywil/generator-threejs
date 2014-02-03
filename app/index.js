@@ -1,75 +1,62 @@
 'use strict';
-var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 
-function ThreejsGenerator(args, options) {
-	yeoman.generators.Base.apply(this, arguments);
-
-	this.on('end', function () {
-		this.installDependencies({
-			bower: false,
-			skipInstall: options['skip-install'],
-			callback: function() {
-				this.log.ok('Run `grunt serve` to start the server.');
-			}.bind(this)
+module.exports = yeoman.generators.Base.extend({
+	initialize: function() {
+		this.on('end', function () {
+			this.installDependencies({
+				bower: false,
+				skipInstall: this.options['skip-install'],
+				callback: function() {
+					this.log.ok('Run `grunt serve` to start the server.');
+				}.bind(this)
+			});
 		});
-	});
 
-	this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
-}
+		this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+	},
+	askFor: function() {
+		var done = this.async();
 
-util.inherits(ThreejsGenerator, yeoman.generators.Base);
+		// have Yeoman greet the user.
+		console.log(this.yeoman);
 
-ThreejsGenerator.prototype.askFor = function askFor() {
-	var done = this.async();
+		var prompts = [{
+			type: 'confirm',
+			name: 'requirejs',
+			message: 'Would you like to include RequireJS (for AMD support)?',
+			'default': true
+		}];
 
-	// have Yeoman greet the user.
-	console.log(this.yeoman);
+		this.prompt(prompts, function (props) {
+			this.requirejs = props.requirejs;
 
-	var prompts = [{
-		type: 'confirm',
-		name: 'requirejs',
-		message: 'Would you like to include RequireJS (for AMD support)?',
-		default: true
-	}];
-
-	this.prompt(prompts, function (props) {
-		this.requirejs = props.requirejs;
-
-		done();
-	}.bind(this));
-};
-
-ThreejsGenerator.prototype.gruntfile = function gruntfile() {
-	this.copy('Gruntfile.js');
-};
-
-ThreejsGenerator.prototype.packageJSON = function packageJSON() {
-	this.copy('_package.json', 'package.json');
-};
-
-ThreejsGenerator.prototype.bower = function bower() {
-	this.template('_bower.json', 'bower.json');
-	this.copy('bowerrc', '.bowerrc');
-	this.copy('_bowercopy.json', 'bowercopy.json');
-};
-
-ThreejsGenerator.prototype.dotfiles = function dotfiles() {
-	this.copy('editorconfig', '.editorconfig');
-	this.copy('jshintrc', '.jshintrc');
-	this.copy('gitignore', '.gitignore');
-};
-
-ThreejsGenerator.prototype.app = function app() {
-	this.mkdir('app');
-	this.mkdir('app/js');
-	this.mkdir('app/css');
-	this.template('index.html', 'app/index.html');
-	this.template('main.js', 'app/js/main.js');
-	this.copy('main.css', 'app/css/main.css');
-};
-
-/* Export
----------------------------------------------------------------------- */
-module.exports = ThreejsGenerator;
+			done();
+		}.bind(this));
+	},
+	gruntfile: function() {
+		this.copy('Gruntfile.js');
+	},
+	packageJSON: function() {
+		this.copy('_package.json', 'package.json');
+	},
+	bower: function() {
+		this.template('_bower.json', 'bower.json');
+		this.copy('bowerrc', '.bowerrc');
+		this.copy('_bowercopy.json', 'bowercopy.json');
+	},
+	dotfiles: function() {
+		this.copy('editorconfig', '.editorconfig');
+		this.copy('jshintrc', '.jshintrc');
+		this.copy('gitignore', '.gitignore');
+	},
+	app: function() {
+		this.mkdir('app');
+		this.mkdir('app/js');
+		this.mkdir('app/css');
+		this.template('index.html', 'app/index.html');
+		this.template('main.js', 'app/js/main.js');
+		this.copy('main.css', 'app/css/main.css');
+	}
+});
