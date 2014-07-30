@@ -17,7 +17,6 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        bowercopy: grunt.file.readJSON('bowercopy.json'),
         // The actual grunt server settings
         connect: {
             options: {
@@ -41,7 +40,7 @@ module.exports = function(grunt) {
         },
         jsonlint: {
             pkg: [ 'package.json' ],
-            bower: [ '{bower,bowercopy}.json' ]
+            bower: [ 'bower.json' ]
         },
         watch: {
             // Watch javascript files for linting

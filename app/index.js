@@ -51,7 +51,6 @@ module.exports = yeoman.generators.Base.extend({
 	bower: function() {
 		this.template('_bower.json', 'bower.json');
 		this.copy('bowerrc', '.bowerrc');
-		this.copy('_bowercopy.json', 'bowercopy.json');
 	},
 	dotfiles: function() {
 		this.copy('editorconfig', '.editorconfig');

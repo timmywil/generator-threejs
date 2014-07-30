@@ -4,7 +4,6 @@
     "dependencies": {},
     "devDependencies": {
         "grunt": "~0.4.2",
-        "grunt-bowercopy": "~0.7.1",
         "grunt-contrib-jshint": "~0.8.0",
         "grunt-contrib-connect": "~0.6.0",
         "grunt-contrib-watch": "~0.5.3",
@@ -14,6 +13,6 @@
         "time-grunt": "~0.2.9"
     },
     "scripts": {
-        "install": "grunt bowercopy"
+        "install": "bower install"
     }
 }

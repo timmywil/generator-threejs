@@ -50,7 +50,6 @@ describe('threejs generator', function () {
 			assert.file('bower.json', (/"name": "temp"/));
 			assert.file('package.json', (/"name": "temp"/));
 			assert.file('Gruntfile.js', (/watch:/));
-			assert.file('bowercopy.json', (/three\.js/));
 			done();
 		});
 	});
@@ -72,7 +71,6 @@ describe('threejs generator', function () {
 			assert.file('bower.json', (/"name": "temp"/));
 			assert.file('package.json', (/"name": "temp"/));
 			assert.file('Gruntfile.js', (/watch:/));
-			assert.file('bowercopy.json', (/three\.min\.js/));
 			done();
 		});
 	});
