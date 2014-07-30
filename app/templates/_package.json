@@ -3,15 +3,15 @@
     "version": "0.0.0",
     "dependencies": {},
     "devDependencies": {
-        "grunt": "~0.4.2",
-        "grunt-bowercopy": "~0.7.1",
-        "grunt-contrib-jshint": "~0.8.0",
-        "grunt-contrib-connect": "~0.6.0",
-        "grunt-contrib-watch": "~0.5.3",
-        "grunt-jsonlint": "~1.0.4",
-        "grunt-newer": "~0.6.1",
-        "load-grunt-tasks": "~0.3.0",
-        "time-grunt": "~0.2.9"
+        "grunt": "^0.4.5",
+        "grunt-bowercopy": "^1.1.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-connect": "^0.8.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-jsonlint": "^1.0.4",
+        "grunt-newer": "^0.7.0",
+        "load-grunt-tasks": "^0.6.0",
+        "time-grunt": "^0.4.0"
     },
     "scripts": {
         "install": "grunt bowercopy"
