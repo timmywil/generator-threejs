@@ -1,9 +1,9 @@
 <% if (requirejs) { %>require({
-    baseUrl: 'js',
+    baseUrl: '.',
     // three.js should have UMD support soon, but it currently does not
-    shim: { 'vendor/three': { exports: 'THREE' } }
+    shim: { 'bower_components/threejs/build/three': { exports: 'THREE' } }
 }, [
-    'vendor/three'
+    'bower_components/threejs/build/three'
 ], function(THREE) {
 <% } else { %>(function() {
 <% } %>
