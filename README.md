@@ -61,6 +61,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 ## Release History
 
+- **0.2.4** *7/30/2014* Updated all node dependencies.
 - **0.2.3** *2/3/2014*  Update generator in accordance with http://yeoman.io/blog/cleanup.html. Update all npm packages.
 - **0.2.1** *1/16/2014*  Update all npm packages.
 - **0.2.0** *1/16/2014*  Add .gitignore to project. Update grunt-bowercopy.
