@@ -29,7 +29,11 @@ function init() {
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    renderer = new THREE.CanvasRenderer();
+    if (window.WebGLRenderingContext) {
+        renderer = new THREE.WebGLRenderer();
+    } else {
+        renderer = new THREE.CanvasRenderer();
+    };
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     document.body.appendChild(renderer.domElement);
