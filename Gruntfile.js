@@ -15,6 +15,14 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		bump: {
+			options: {
+				createTag: true,
+				tagName: '%VERSION%',
+				tagMessage: 'Version %VERSION%',
+				push: false
+			}
+		},
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc'
