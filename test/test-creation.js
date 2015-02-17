@@ -29,7 +29,7 @@ describe('threejs generator', function () {
 	function run(app, options, complete) {
 		helpers.mockPrompt(app, options);
 		app.options['skip-install'] = true;
-		app.run({}, complete);
+		app.run(complete);
 	}
 
 	it('creates expected files', function (done) {
@@ -47,10 +47,10 @@ describe('threejs generator', function () {
 			'requirejs': true
 		}, function() {
 			assert.file(expected);
-			assert.file('bower.json', (/"name": "temp"/));
-			assert.file('package.json', (/"name": "temp"/));
-			assert.file('Gruntfile.js', (/watch:/));
-			assert.file('bowercopy.json', (/three\.js/));
+			assert.fileContent('bower.json', (/"name": "temp"/));
+			assert.fileContent('package.json', (/"name": "temp"/));
+			assert.fileContent('Gruntfile.js', (/watch:/));
+			assert.fileContent('bowercopy.json', (/three\.js/));
 			done();
 		});
 	});
@@ -69,10 +69,10 @@ describe('threejs generator', function () {
 			'requirejs': false
 		}, function() {
 			assert.file(expected);
-			assert.file('bower.json', (/"name": "temp"/));
-			assert.file('package.json', (/"name": "temp"/));
-			assert.file('Gruntfile.js', (/watch:/));
-			assert.file('bowercopy.json', (/three\.min\.js/));
+			assert.fileContent('bower.json', (/"name": "temp"/));
+			assert.fileContent('package.json', (/"name": "temp"/));
+			assert.fileContent('Gruntfile.js', (/watch:/));
+			assert.fileContent('bowercopy.json', (/three\.min\.js/));
 			done();
 		});
 	});

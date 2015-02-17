@@ -26,8 +26,9 @@ module.exports = yeoman.generators.Base.extend({
 	askFor: function() {
 		var done = this.async();
 
-		// have Yeoman greet the user.
-		console.log(this.yeoman);
+		this.log();
+		this.log('Welcome to the three.js generator!');
+		this.log();
 
 		var prompts = [{
 			type: 'confirm',
