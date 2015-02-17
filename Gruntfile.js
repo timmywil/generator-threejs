@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		bump: {
 			options: {
+				commitMessage: 'Release %VERSION%',
 				createTag: true,
 				tagName: '%VERSION%',
 				tagMessage: 'Version %VERSION%',
