@@ -20,7 +20,7 @@ function init() {
 
     scene = new THREE.Scene();
 
-    geometry = new THREE.CubeGeometry(200, 200, 200);
+    geometry = new THREE.BoxGeometry(200, 200, 200);
     material = new THREE.MeshBasicMaterial({
         color: 0xff0000,
         wireframe: true
@@ -29,7 +29,25 @@ function init() {
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    renderer = new THREE.CanvasRenderer();
+
+    function webglAvailable() {
+        try {
+            var canvas = document.createElement( 'canvas' );
+            return !!( window.WebGLRenderingContext && (
+            canvas.getContext( 'webgl' ) ||
+            canvas.getContext( 'experimental-webgl' ) )
+            );
+        } catch ( e ) {
+            return false;
+        }
+    }
+
+    if ( webglAvailable() ) {
+        renderer = new THREE.WebGLRenderer();
+    } else {
+        renderer = new THREE.CanvasRenderer();
+    }
+
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     document.body.appendChild(renderer.domElement);
